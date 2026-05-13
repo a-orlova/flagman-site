@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#F4F8FB" />
+  <meta name="description" content="ФЛАГМАН — речные прогуки по Москве. Прогулки по Москве-реке на теплоходах «Флагман» и «Лоцман»: панорамные виды, авторский ресторан, бар. Бронирование онлайн." />
+  <meta property="og:title" content="ФЛАГМАН — Парадный выход в Москву" />
+  <meta property="og:description" content="Речные прогулки по Москве-реке на пароходе Флагман. Ресторан, бар, виды на Кремль и Москва-Сити." />
+  <title>ФЛАГМАН · Речные прогулки по Москве</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="images/anchor-icon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+  <header class="nav" id="topnav">
+    <div class="container nav__inner">
+      <a href="#hero" class="brand" aria-label="ФЛАГМАНЪ — на главную">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+          <use href="#icon-anchor"></use>
+        </svg>
+        <span class="brand__name">ФЛАГМАН</span>
+        <span class="brand__sub">Речные прогулки по Москве</span>
+      </a>
+
+      <button class="nav__burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__menu" id="primary-nav" aria-label="Главная навигация">
+        <a href="#fleet">Корабли</a>
+        <a href="#route">Маршрут</a>
+        <a href="#menu">Меню</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#faq">FAQ</a>
+        <a href="#booking" class="nav__cta">Забронировать</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       HERO
+       ========================================================= -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="images/флагман/_IBL2797.jpg" alt="" loading="eager" />
+      <div class="hero__veil"></div>
+      <svg class="hero__waves" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
+        <path class="wave wave--1" d="M0,120 C240,180 480,60 720,120 C960,180 1200,60 1440,120 L1440,220 L0,220 Z" />
+        <path class="wave wave--2" d="M0,140 C240,90 480,200 720,140 C960,80 1200,200 1440,140 L1440,220 L0,220 Z" />
+        <path class="wave wave--3" d="M0,170 C240,200 480,150 720,180 C960,210 1200,150 1440,180 L1440,220 L0,220 Z" />
+      </svg>
+    </div>
+
+    <div class="container hero__content">
+      <p class="hero__eyebrow">
+        <svg viewBox="0 0 64 64" class="eyebrow-anchor" aria-hidden="true"><use href="#icon-anchor"></use></svg>
+        <span>с ???? года</span>
+      </p>
+      <h1 class="hero__title">
+        <span class="hero__title-line">Речные экскурсии</span>
+        <span class="hero__title-line hero__title-line--accent">по&nbsp;Москве-реке</span>
+      </h1>
+      <p class="hero__lede">
+        Проведите время на пароходе <strong>Флагман</strong> - с авторской кухней,
+        барной картой и завораживающими видами.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#booking" class="btn btn--primary">
+          <span>Забронировать прогулку</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#fleet" class="btn btn--ghost">Узнать о&nbsp;Флагмане</a>
+      </div>
+
+      <ul class="hero__stats" aria-label="Преимущества">
+        <li>
+          <span class="stat__num">2</span>
+          <span class="stat__label">доступных&nbsp;теплохода</span>
+        </li>
+        <li>
+          <span class="stat__num">???+</span>
+          <span class="stat__label">гостей на&nbsp;Флагмане</span>
+        </li>
+        <li>
+          <span class="stat__num">1.5&nbsp;ч</span>
+          <span class="stat__label">авторский&nbsp;маршрут</span>
+        </li>
+      </ul>
+    </div>
+
+    <a class="hero__scroll" href="#fleet" aria-label="Прокрутить вниз">
+      <span></span>
+    </a>
+  </section>
+
+
+  <!-- =========================================================
+       FLEET
+       ========================================================= -->
+  <section class="section fleet" id="fleet">
+    <div class="container">
+      <header class="section__head">
+        <p class="section__eyebrow">Корабли</p>
+        <h2 class="section__title">Два теплохода — два&nbsp;характера</h2>
+        <p class="section__lede">«Флагман» — наш парадный корабль для&nbsp;вечеров и&nbsp;торжеств. <br>«Лоцман» — для&nbsp;камерных встреч и&nbsp;деловых&nbsp;завтраков.</p>
+      </header>
+
+      <article class="ship ship--flagship" data-ship="flagman">
+        <div class="ship__badge">Выбор гостей</div>
+
+        <div class="ship__media">
+          <div class="ship__photo ship__photo--side">
+            <img src="images/флагман/photo-2.jpg" alt="Диджей на теплоходе Флагман" loading="lazy" />
+          </div>
+          <div class="ship__photo ship__photo--main">
+            <img src="images/флагман/photo-1-1.jpg" alt="Теплоход «Флагман» на Москве-реке" loading="lazy" />
+          </div>
+          <div class="ship__photo ship__photo--small">
+            <img src="images/флагман/SQ8A8543.jpg" alt="Вечеринка на теплоходе Флагман" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="ship__body">
+          <h3 class="ship__name">Флагман</h3>
+          <p class="ship__tag">Двухпалубный теплоход премиум-класса</p>
+          <p class="ship__desc">
+            Дубовые панели, латунные детали, мягкий свет и&nbsp;панорамные окна на&nbsp;обеих
+            палубах. На&nbsp;верхней — открытая видовая зона, на&nbsp;нижней — ресторан
+            с&nbsp;живой музыкой.
+          </p>
+
+          <ul class="ship__features">
+            <li><strong>???+</strong> гостей</li>
+            <li><strong>2</strong> палубы</li>
+            <li><strong>Ресторан</strong> и&nbsp;бар</li>
+            <li><strong>Live</strong>-музыка</li>
+            <li><strong>Wi-Fi</strong> на борту</li>
+          </ul>
+
+          <div class="ship__ctas">
+            <a href="#booking" class="btn btn--primary" data-prefill-ship="flagman">Забронировать «Флагман»</a>
+            <a href="#gallery" class="btn btn--ghost">Посмотреть галерею</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="ship ship--secondary" data-ship="lotsman">
+        <div class="ship__media ship__media--simple">
+          <div class="ship__photo">
+            <img src="images/лоцман/photo_2026-05-11_17-36-13.jpg" alt="Теплоход «Лоцман»" loading="lazy" />
+          </div>
+          <div class="ship__photo">
+            <img src="images/лоцман/photo_2026-05-12_18-34-07.jpg" alt="Теплоход «Лоцман» на воде" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="ship__body">
+          <h3 class="ship__name">Лоцман</h3>
+          <p class="ship__tag">Ретро-теплоход для&nbsp;близких встреч</p>
+          <p class="ship__desc">
+            Компактный корабль для&nbsp;камерных мероприятий до&nbsp;???&nbsp;гостей -
+            идеален для&nbsp;семейных праздников, бранчей и&nbsp;деловых переговоров.
+          </p>
+
+          <ul class="ship__features ship__features--compact">
+            <li><strong>??</strong> гостей</li>
+            <li><strong>1</strong> палуба</li>
+            <li><strong>Ресторан на открытом воздухе</strong></li>
+          </ul>
+
+          <div class="ship__ctas">
+            <a href="#booking" class="btn btn--primary" data-prefill-ship="lotsman">Забронировать «Лоцман»</a>
+            <a href="#gallery" class="btn btn--ghost">Посмотреть галерею</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       ROUTE WITH ANIMATED SHIP
+       ========================================================= -->
+  <section class="section route" id="route">
+    <div class="container">
+      <header class="section__head">
+        <p class="section__eyebrow">Маршрут теплохода «Флагман»</p>
+        <h2 class="section__title">Столица, какую видят только с&nbsp;воды</h2>
+        <p class="section__lede">2.5&nbsp;часа · 10&nbsp;знаковых точек</p>
+      </header>
+
+      <div class="route__stage">
+        <svg width="0" height="0" style="position:absolute;width:0;height:0" aria-hidden="true">
+          <defs>
+            <linearGradient id="riverGrad" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0%" stop-color="#A9C8DA" />
+              <stop offset="50%" stop-color="#7FB0CA" />
+              <stop offset="100%" stop-color="#A9C8DA" />
+            </linearGradient>
+            <linearGradient id="riverGradV" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#A9C8DA" />
+              <stop offset="50%" stop-color="#7FB0CA" />
+              <stop offset="100%" stop-color="#A9C8DA" />
+            </linearGradient>
+            <linearGradient id="shipBody" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#FFFFFF" />
+              <stop offset="100%" stop-color="#F2E8CC" />
+            </linearGradient>
+            <linearGradient id="shipHull" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#2C5A78" />
+              <stop offset="100%" stop-color="#1F4660" />
+            </linearGradient>
+            <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+              <feOffset dx="0" dy="4" result="off" />
+              <feComponentTransfer><feFuncA type="linear" slope="0.3" /></feComponentTransfer>
+              <feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+          </defs>
+        </svg>
+
+        <!-- ============== HORIZONTAL MAP (desktop / tablet) ============== -->
+        <svg class="route__map route__map--horizontal"
+             data-orientation="horizontal"
+             viewBox="0 0 1200 660"
+             preserveAspectRatio="xMidYMid meet"
+             aria-hidden="true">
+          <path class="route__river" id="riverPathH"
+            d="M 50,470 C 200,470 280,200 420,360 C 560,490 620,200 780,360 C 940,490 1020,200 1160,420"
+            stroke="url(#riverGrad)" stroke-width="24" stroke-linecap="round" fill="none" opacity="0.55" />
+          <path
+            d="M 50,470 C 200,470 280,200 420,360 C 560,490 620,200 780,360 C 940,490 1020,200 1160,420"
+            stroke="#FFFFFF" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round" fill="none" opacity="0.7" />
+
+          <!-- waypoints with labels (positioned via JS) -->
+          <g class="route__points">
+            <g class="route__point" data-idx="0"><circle r="11" /><g class="route__label"><rect class="route__label-bg" rx="14" /><text text-anchor="middle" y="5">Нескучный сад</text></g></g>
+            <g class="route__point" data-idx="1"><circle r="11" /><g class="route__label"><rect class="route__label-bg" rx="14" /><text text-anchor="middle" y="5">Парк Горького</text></g></g>
+            <g class="route__point" data-idx="2"><circle r="11" /><g class="route__label"><rect class="route__label-bg" rx="14" /><text text-anchor="middle" y="5">Музеон</text></g></g>
+            <g class="route__point" data-idx="3"><circle r="11" /><g class="route__label"><rect class="route__label-bg" rx="14" /><text text-anchor="middle" y="5">Памятник Петру I</text></g></g>
+            <g class="route__point" data-idx="4" data-label-dy="10"><circle r="11" /><g class="route__label"><rect class="route__label-bg" rx="14" /><text text-anchor="middle" y="5">Храм Христа Спасителя</text></g></g>
+            <g class="route__point" data-idx="5"><circle r="11" /><g class="route__label"><rect class="route__label-bg" rx="14" /><text text-anchor="middle" y="5">Московский Кремль</text></g></g>
+            <g class="route__point" data-idx="6"><circle r="11" /><g class="route__label"><rect class="route__label-bg" rx="14" /><text text-anchor="middle" y="5">Парк «Зарядье»</text></g></g>
+            <g class="route__point" data-idx="7" data-label-dy="20"><circle r="11" /><g class="route__label"><rect class="route__label-bg" rx="14" /><text text-anchor="middle" y="5">Парящий мост</text></g></g>
+            <g class="route__point" data-idx="8"><circle r="11" /><g class="route__label"><rect class="route__label-bg" rx="14" /><text text-anchor="middle" y="5">Котельническая</text></g></g>
+            <g class="route__point" data-idx="9"><circle r="11" /><g class="route__label"><rect class="route__label-bg" rx="14" /><text text-anchor="middle" y="5">Китай-город</text></g></g>
+          </g>
+
+          <g class="route__ship" filter="url(#softShadow)">
+            <g transform="translate(-93,-96) scale(1.6)">
+              <ellipse cx="58" cy="78" rx="52" ry="4" fill="#1F4660" opacity="0.14"/>
+              <path d="M6,60 L110,60 L100,76 L16,76 Z" fill="url(#shipHull)" />
+              <path d="M6,60 L110,60 L100,76 L16,76 Z" fill="none" stroke="#FFFFFF" stroke-width="0.8" opacity="0.4" />
+              <rect x="14" y="36" width="88" height="24" fill="url(#shipBody)" stroke="#2C5A78" stroke-width="1" />
+              <rect x="20" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="30" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="40" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="50" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="60" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="70" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="80" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="90" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="14" y="50" width="88" height="8" fill="#2C5A78" />
+              <text x="58" y="56.2" text-anchor="middle" fill="#FBF7EE" font-family="Cormorant Garamond, serif" font-size="6.5" font-weight="700" letter-spacing="1.4">ФЛАГМАН</text>
+              <rect x="32" y="22" width="52" height="14" fill="url(#shipBody)" stroke="#2C5A78" stroke-width="1" />
+              <rect x="36" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="42" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="48" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="54" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="60" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="66" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="72" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="78" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="68" y="10" width="6" height="14" fill="#FBF7EE" stroke="#2C5A78" stroke-width="1" />
+              <rect x="68" y="14" width="6" height="3" fill="#B89D5C" />
+              <line x1="58" y1="22" x2="58" y2="2" stroke="#2C5A78" stroke-width="1.2" />
+              <path d="M58,4 L74,9 L58,12 Z" fill="#B89D5C" />
+              <circle cx="58" cy="2" r="1.6" fill="#B89D5C" />
+              <line x1="6" y1="60" x2="110" y2="60" stroke="#2C5A78" stroke-width="0.5" opacity="0.5" />
+            </g>
+          </g>
+        </svg>
+
+        <!-- ============== VERTICAL MAP (mobile) ============== -->
+        <svg class="route__map route__map--vertical"
+             data-orientation="vertical"
+             viewBox="0 0 900 1080"
+             preserveAspectRatio="xMidYMid meet"
+             aria-hidden="true">
+
+          <path class="route__river" id="riverPathV"
+            d="M 450,60 C 450,200 320,290 450,430 C 580,570 320,660 450,800 C 580,940 400,1000 450,1020"
+            stroke="url(#riverGradV)" stroke-width="26" stroke-linecap="round" fill="none" opacity="0.55" />
+          <path
+            d="M 450,60 C 450,200 320,290 450,430 C 580,570 320,660 450,800 C 580,940 400,1000 450,1020"
+            stroke="#FFFFFF" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round" fill="none" opacity="0.7" />
+
+          <g class="route__points">
+            <g class="route__point" data-idx="0"><circle r="13" /><g class="route__label"><rect class="route__label-bg" rx="16" /><text text-anchor="middle" y="6">Нескучный сад</text></g></g>
+            <g class="route__point" data-idx="1"><circle r="13" /><g class="route__label"><rect class="route__label-bg" rx="16" /><text text-anchor="middle" y="6">Парк Горького</text></g></g>
+            <g class="route__point" data-idx="2"><circle r="13" /><g class="route__label"><rect class="route__label-bg" rx="16" /><text text-anchor="middle" y="6">Музеон</text></g></g>
+            <g class="route__point" data-idx="3"><circle r="13" /><g class="route__label"><rect class="route__label-bg" rx="16" /><text text-anchor="middle" y="6">Памятник Петру I</text></g></g>
+            <g class="route__point" data-idx="4"><circle r="13" /><g class="route__label"><rect class="route__label-bg" rx="16" /><text text-anchor="middle" y="6">Храм Христа Спасителя</text></g></g>
+            <g class="route__point" data-idx="5"><circle r="13" /><g class="route__label"><rect class="route__label-bg" rx="16" /><text text-anchor="middle" y="6">Московский Кремль</text></g></g>
+            <g class="route__point" data-idx="6"><circle r="13" /><g class="route__label"><rect class="route__label-bg" rx="16" /><text text-anchor="middle" y="6">Парк «Зарядье»</text></g></g>
+            <g class="route__point" data-idx="7"><circle r="13" /><g class="route__label"><rect class="route__label-bg" rx="16" /><text text-anchor="middle" y="6">Парящий мост</text></g></g>
+            <g class="route__point" data-idx="8"><circle r="13" /><g class="route__label"><rect class="route__label-bg" rx="16" /><text text-anchor="middle" y="6">Котельническая</text></g></g>
+            <g class="route__point" data-idx="9"><circle r="13" /><g class="route__label"><rect class="route__label-bg" rx="16" /><text text-anchor="middle" y="6">Китай-город</text></g></g>
+          </g>
+
+          <g class="route__ship" filter="url(#softShadow)">
+            <g transform="translate(-69.6,-72) scale(1.2)">
+              <ellipse cx="58" cy="78" rx="52" ry="4" fill="#1F4660" opacity="0.14"/>
+              <path d="M6,60 L110,60 L100,76 L16,76 Z" fill="url(#shipHull)" />
+              <path d="M6,60 L110,60 L100,76 L16,76 Z" fill="none" stroke="#FFFFFF" stroke-width="0.8" opacity="0.4" />
+              <rect x="14" y="36" width="88" height="24" fill="url(#shipBody)" stroke="#2C5A78" stroke-width="1" />
+              <rect x="20" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="30" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="40" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="50" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="60" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="70" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="80" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="90" y="40" width="6" height="6" rx="1" fill="#2C5A78" />
+              <rect x="14" y="50" width="88" height="8" fill="#2C5A78" />
+              <text x="58" y="56.2" text-anchor="middle" fill="#FBF7EE" font-family="Cormorant Garamond, serif" font-size="6.5" font-weight="700" letter-spacing="1.4">ФЛАГМАН</text>
+              <rect x="32" y="22" width="52" height="14" fill="url(#shipBody)" stroke="#2C5A78" stroke-width="1" />
+              <rect x="36" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="42" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="48" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="54" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="60" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="66" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="72" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="78" y="26" width="4" height="6" rx="0.5" fill="#A9C8DA" />
+              <rect x="68" y="10" width="6" height="14" fill="#FBF7EE" stroke="#2C5A78" stroke-width="1" />
+              <rect x="68" y="14" width="6" height="3" fill="#B89D5C" />
+              <line x1="58" y1="22" x2="58" y2="2" stroke="#2C5A78" stroke-width="1.2" />
+              <path d="M58,4 L74,9 L58,12 Z" fill="#B89D5C" />
+              <circle cx="58" cy="2" r="1.6" fill="#B89D5C" />
+              <line x1="6" y1="60" x2="110" y2="60" stroke="#2C5A78" stroke-width="0.5" opacity="0.5" />
+            </g>
+          </g>
+        </svg>
+
+        <div class="route__progress" aria-hidden="true">
+          <div class="route__progress-fill" id="routeProgressFill"></div>
+        </div>
+      </div>
+
+      <ol class="route__list" id="routeList">
+        <li class="route__stop" tabindex="0" aria-label="Причал Нескучный сад — нажмите чтобы увидеть фото">
+          <div class="route__stop-inner">
+            <div class="route__stop-face route__stop-face--front">
+              <span class="route__num">01</span>
+              <h4>Причал «Нескучный сад»</h4>
+              <p>Уютная набережная у старинного парка, где Москва-река особенно спокойна и живописна.</p>
+              <span class="route__stop-hint" aria-hidden="true">Посмотреть место&nbsp;→</span>
+            </div>
+            <div class="route__stop-face route__stop-face--back" style="background-image:url('images/точки/причал-нескучный-сад.jpg')">
+              <div class="route__stop-caption"><h4>Причал «Нескучный сад»</h4></div>
+            </div>
+          </div>
+        </li>
+        <li class="route__stop" tabindex="0" aria-label="Парк Горького — нажмите чтобы увидеть фото">
+          <div class="route__stop-inner">
+            <div class="route__stop-face route__stop-face--front">
+              <span class="route__num">02</span>
+              <h4>Парк Горького</h4>
+              <p>Главный парк столицы встречает гостей просторными аллеями, современными павильонами и атмосферой отдыха у воды.</p>
+              <span class="route__stop-hint" aria-hidden="true">Посмотреть место&nbsp;→</span>
+            </div>
+            <div class="route__stop-face route__stop-face--back" style="background-image:url('images/точки/парк-горького.jpg')">
+              <div class="route__stop-caption"><h4>Парк Горького</h4></div>
+            </div>
+          </div>
+        </li>
+        <li class="route__stop" tabindex="0" aria-label="Парк искусств Музеон — нажмите чтобы увидеть фото">
+          <div class="route__stop-inner">
+            <div class="route__stop-face route__stop-face--front">
+              <span class="route__num">03</span>
+              <h4>Парк искусств «Музеон»</h4>
+<p>Необычный музей под открытым небом, где среди зелени собраны знаменитые скульптуры и арт-объекты.</p>              <span class="route__stop-hint" aria-hidden="true">Посмотреть место&nbsp;→</span>
+            </div>
+            <div class="route__stop-face route__stop-face--back" style="background-image:url('images/точки/парк-музеон.jpg')">
+              <div class="route__stop-caption"><h4>Парк «Музеон»</h4></div>
+            </div>
+          </div>
+        </li>
+        <li class="route__stop" tabindex="0" aria-label="Памятник Петру I — нажмите чтобы увидеть фото">
+          <div class="route__stop-inner">
+            <div class="route__stop-face route__stop-face--front">
+              <span class="route__num">04</span>
+              <h4>Памятник Петру I</h4>
+              <p>Величественный монумент работы Зураба Церетели возвышается над рекой, став одним из самых узнаваемых символов Москвы.</p>
+              <span class="route__stop-hint" aria-hidden="true">Посмотреть место&nbsp;→</span>
+            </div>
+            <div class="route__stop-face route__stop-face--back" style="background-image:url('images/точки/памятник-петру-первому.jpg')">
+              <div class="route__stop-caption"><h4>Памятник Петру&nbsp;I</h4></div>
+            </div>
+          </div>
+        </li>
+        <li class="route__stop" tabindex="0" aria-label="Храм Христа Спасителя — нажмите чтобы увидеть фото">
+          <div class="route__stop-inner">
+            <div class="route__stop-face route__stop-face--front">
+              <span class="route__num">05</span>
+              <h4>Храм Христа Спасителя</h4>
+              <p>Главный православный храм России поражает своим золотым куполом, сияющим над Москвой-рекой.</p>
+              <span class="route__stop-hint" aria-hidden="true">Посмотреть место&nbsp;→</span>
+            </div>
+            <div class="route__stop-face route__stop-face--back" style="background-image:url('images/точки/храм-христа-спасителя.jpg')">
+              <div class="route__stop-caption"><h4>Храм Христа Спасителя</h4></div>
+            </div>
+          </div>
+        </li>
+        <li class="route__stop" tabindex="0" aria-label="Московский Кремль — нажмите чтобы увидеть фото">
+          <div class="route__stop-inner">
+            <div class="route__stop-face route__stop-face--front">
+              <span class="route__num">06</span>
+              <h4>Московский Кремль</h4>
+              <p>Историческое сердце столицы с древними башнями и соборами открывает один из самых впечатляющих видов Москвы.</p>
+              <span class="route__stop-hint" aria-hidden="true">Посмотреть место&nbsp;→</span>
+            </div>
+            <div class="route__stop-face route__stop-face--back" style="background-image:url('images/точки/московский-кремль.jpg')">
+              <div class="route__stop-caption"><h4>Московский Кремль</h4></div>
+            </div>
+          </div>
+        </li>
+        <li class="route__stop" tabindex="0" aria-label="Парк Зарядье — нажмите чтобы увидеть фото">
+          <div class="route__stop-inner">
+            <div class="route__stop-face route__stop-face--front">
+              <span class="route__num">07</span>
+              <h4>Парк «Зарядье»</h4>
+              <p>Современный городской парк, где природа, архитектура и панорамные виды на центр Москвы соединяются в единое пространство.</p>
+              <span class="route__stop-hint" aria-hidden="true">Посмотреть место&nbsp;→</span>
+            </div>
+            <div class="route__stop-face route__stop-face--back" style="background-image:url('images/точки/парк-зарядье.jpg')">
+              <div class="route__stop-caption"><h4>Парк «Зарядье»</h4></div>
+            </div>
+          </div>
+        </li>
+        <li class="route__stop" tabindex="0" aria-label="Парящий мост — нажмите чтобы увидеть фото">
+          <div class="route__stop-inner">
+            <div class="route__stop-face route__stop-face--front">
+              <span class="route__num">08</span>
+              <h4>Парящий мост</h4>
+              <p>Уникальный мост над Москвой-рекой создаёт ощущение полёта и дарит захватывающий вид на Кремль и набережные.</p>
+              <span class="route__stop-hint" aria-hidden="true">Посмотреть место&nbsp;→</span>
+            </div>
+            <div class="route__stop-face route__stop-face--back" style="background-image:url('images/точки/парящий-мост.jpg')">
+              <div class="route__stop-caption"><h4>Парящий мост</h4></div>
+            </div>
+          </div>
+        </li>
+        <li class="route__stop" tabindex="0" aria-label="Высотка на Котельнической — нажмите чтобы увидеть фото">
+          <div class="route__stop-inner">
+            <div class="route__stop-face route__stop-face--front">
+              <span class="route__num">09</span>
+              <h4>Высотка на&nbsp;Котельнической</h4>
+              <p>Легендарная сталинская высотка величественно возвышается над рекой, напоминая о послевоенной эпохе Москвы.</p>
+              <span class="route__stop-hint" aria-hidden="true">Посмотреть место&nbsp;→</span>
+            </div>
+            <div class="route__stop-face route__stop-face--back" style="background-image:url('images/точки/высотка-на-котельнической.jpg')">
+              <div class="route__stop-caption"><h4>Высотка на&nbsp;Котельнической</h4></div>
+            </div>
+          </div>
+        </li>
+        <li class="route__stop" tabindex="0" aria-label="Причал Китай-город — нажмите чтобы увидеть фото">
+          <div class="route__stop-inner">
+            <div class="route__stop-face route__stop-face--front">
+              <span class="route__num">10</span>
+              <h4>Причал «Китай-город»</h4>
+              <p>Оживлённый причал у исторического центра, откуда открываются красивые виды на старую и современную Москву.</p>
+              <span class="route__stop-hint" aria-hidden="true">Посмотреть место&nbsp;→</span>
+            </div>
+            <div class="route__stop-face route__stop-face--back" style="background-image:url('images/точки/причал-китай-город.jpg')">
+              <div class="route__stop-caption"><h4>Причал «Китай-город»</h4></div>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MENU
+       ========================================================= -->
+  <section class="section menu" id="menu">
+    <div class="container">
+      <header class="section__head">
+        <p class="section__eyebrow">Гастрономия на&nbsp;борту</p>
+        <h2 class="section__title">Меню ресторана и&nbsp;барная карта</h2>
+        <p class="section__lede">Салаты, горячие и холодные закуски, основные блюда и десерты, а также отдельная барная карта.</p>
+      </header>
+
+      <div class="menu__tabs" role="tablist" aria-label="Выбор меню">
+        <button class="menu__tab is-active" role="tab" aria-selected="true"
+                data-img="information/меню 1лист 2026 ф-1.png"
+                data-pdf="information/меню 1лист 2026 ф.pdf"
+                data-title="Основное меню «Флагман»"
+                id="tab-flagman">
+          <span class="menu__tab-title">Основное меню</span>
+          <span class="menu__tab-sub">Флагман</span>
+        </button>
+        <button class="menu__tab" role="tab" aria-selected="false"
+                data-img="information/меню 2 лист 2026 общ-1.png"
+                data-pdf="information/меню 2 лист 2026 общ.pdf"
+                data-title="Барная карта"
+                id="tab-general">
+          <span class="menu__tab-title">Барная карта</span>
+          <span class="menu__tab-sub">Холодные и горячие напитки</span>
+        </button>
+      </div>
+
+      <div class="menu__viewer" role="tabpanel" aria-labelledby="tab-flagman">
+        <div class="menu__viewer-bar">
+          <span class="menu__viewer-title" id="menuViewerTitle">Основное меню «Флагман»</span>
+          <div class="menu__viewer-actions">
+            <a href="information/меню 1лист 2026 ф.pdf" target="_blank" rel="noopener" class="menu__btn" id="menuOpenLink">Открыть&nbsp;PDF</a>
+            <a href="information/меню 1лист 2026 ф.pdf" download target="_blank" rel="noopener" class="menu__btn menu__btn--ghost" id="menuDownloadLink">Скачать&nbsp;PDF</a>
+          </div>
+        </div>
+        <div class="menu__image-wrap">
+          <img id="menuImage"
+               class="menu__image"
+               src="information/меню 1лист 2026 ф-1.png"
+               alt="Меню теплохода Флагман — изображение страницы меню" />
+        </div>
+      </div>
+
+      <p class="menu__note">Цены могут меняться сезонно.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       GALLERY
+       ========================================================= -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <header class="section__head">
+        <p class="section__eyebrow">Галерея</p>
+        <h2 class="section__title">Как это выглядит на&nbsp;самом деле</h2>
+        <p class="section__lede">Без рендеров и&nbsp;стоков - реальные фотографии вечеров, мероприятий и&nbsp;интерьеров обоих кораблей.</p>
+      </header>
+
+      <div class="gallery__filters" role="tablist" aria-label="Фильтр галереи">
+        <button class="gallery__filter is-active" data-filter="all" role="tab" aria-selected="true">Все фото</button>
+        <button class="gallery__filter" data-filter="flagman" role="tab" aria-selected="false">Флагман</button>
+        <button class="gallery__filter" data-filter="lotsman" role="tab" aria-selected="false">Лоцман</button>
+      </div>
+
+      <div class="gallery__grid" id="galleryGrid">
+        <!-- Flagman -->
+        <figure class="gallery__item gallery__item--tall" data-cat="flagman">
+          <img src="images/флагман/_IBL2797.jpg" alt="Теплоход Флагман — общий вид" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item" data-cat="flagman">
+          <img src="images/флагман/DSC00074.jpg" alt="Сервировка и&nbsp;интерьер ресторана" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item gallery__item--wide" data-cat="flagman">
+          <img src="images/флагман/IMG_1830.jpg" alt="Вечернее мероприятие" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item" data-cat="flagman">
+          <img src="images/флагман/SQ8A8366.jpg" alt="Гости на палубе" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item" data-cat="flagman">
+          <img src="images/флагман/SQ8A8376.jpg" alt="Корабль на&nbsp;закате" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item gallery__item--tall" data-cat="flagman">
+          <img src="images/флагман/SQ8A8390.jpg" alt="Интерьер салона" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item" data-cat="flagman">
+          <img src="images/флагман/SQ8A8419.jpg" alt="Мероприятие на корабле" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item" data-cat="flagman">
+          <img src="images/флагман/SQ8A8503.jpg" alt="Накрытые столы для торжества" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item gallery__item--wide" data-cat="flagman">
+          <img src="images/флагман/SQ8A8543.jpg" alt="Барная стойка на борту" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item" data-cat="flagman">
+          <img src="images/флагман/_IBL0849.jpg" alt="Закатный вид с палубы" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item" data-cat="flagman">
+          <img src="images/флагман/photo-1-1.jpg" alt="Атмосфера на&nbsp;борту Флагмана" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item" data-cat="flagman">
+          <img src="images/флагман/photo-2.jpg" alt="Вечер на&nbsp;борту Флагмана" loading="lazy" />
+          
+        </figure>
+
+        <!-- Lotsman -->
+        <figure class="gallery__item" data-cat="lotsman">
+          <img src="images/лоцман/photo_2026-05-11_17-36-12.jpg" alt="Лоцманъ — внешний вид" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item gallery__item--wide" data-cat="lotsman">
+          <img src="images/лоцман/photo_2026-05-11_17-36-13.jpg" alt="Лоцманъ на воде" loading="lazy" />
+          
+        </figure>
+        <figure class="gallery__item" data-cat="lotsman">
+          <img src="images/лоцман/photo_2026-05-11_17-36-17.jpg" alt="Лоцманъ — палуба" loading="lazy" />
+          
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       BOOKING
+       ========================================================= -->
+  <section class="section booking" id="booking">
+    <div class="container booking__inner">
+      <div class="booking__intro">
+        <p class="section__eyebrow">Бронирование</p>
+        <h2 class="section__title">Забронировать речную прогулку</h2>
+        <p class="section__lede">Выберите корабль, дату и&nbsp;время. После заявки вы&nbsp;перейдёте на&nbsp;защищённую страницу оплаты.</p>
+
+        <ul class="booking__perks">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            После покупки билета он придет вам на указанный email
+          </li>
+          <!-- <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            При неблагоприятных погодных условиях расписание может корректироваться
+          </li> -->
+          <!-- <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Дети до 6 лет — бесплатно в сопровождении взрослых (из расчета 1 ребенок — 1 взрослый)
+          </li> -->
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Посадка на борт открывается за 10 минут до начала рейса
+          </li>
+        </ul>
+
+        <div class="booking__contact">
+          <span>Прямой номер капитана сервиса:</span>
+          <a href="tel:+74951234567">+7 (495)&nbsp;123-45-67</a>
+        </div>
+      </div>
+
+      <form class="booking__form" id="bookingForm" novalidate>
+        <div class="field field--full">
+          <label>Корабль</label>
+          <div class="ship-switch" role="radiogroup" aria-label="Выбор корабля">
+            <label class="ship-switch__opt is-checked">
+              <input type="radio" name="ship" value="Флагман" checked />
+              <span class="ship-switch__title">Флагман</span>
+              <span class="ship-switch__sub">премиум · ресторан · бар</span>
+            </label>
+            <label class="ship-switch__opt">
+              <input type="radio" name="ship" value="Лоцман" />
+              <span class="ship-switch__title">Лоцман</span>
+              <span class="ship-switch__sub">камерный · ретро-стиль</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="bookPier">Причал отправления</label>
+          <select id="bookPier" name="pier" required>
+            <option value="">Сначала выберите корабль</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="bookDate">Дата</label>
+          <input type="date" id="bookDate" name="date" required />
+        </div>
+
+        <div class="field">
+          <label for="bookTime">Время отправления</label>
+          <select id="bookTime" name="time" required>
+            <option value="">Выберите причал</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="bookGuests">Гостей</label>
+          <input type="number" id="bookGuests" name="guests" min="1" max="120" value="2" required />
+        </div>
+
+        <div class="field">
+          <label for="bookName">Имя</label>
+          <input type="text" id="bookName" name="name" placeholder="Как к&nbsp;Вам обращаться" required />
+        </div>
+
+        <div class="field">
+          <label for="bookPhone">Телефон</label>
+          <input type="tel" id="bookPhone" name="phone" placeholder="+7 (___) ___-__-__" required />
+        </div>
+
+        <div class="field field--full">
+          <label for="bookEmail">E-mail для&nbsp;билета</label>
+          <input type="email" id="bookEmail" name="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="field field--full field--check">
+          <label class="check">
+            <input type="checkbox" required />
+            <span>Согласен на&nbsp;обработку персональных данных и&nbsp;условия публичной&nbsp;оферты</span>
+          </label>
+        </div>
+
+        <div class="field field--full booking__submit">
+          <button type="submit" class="btn btn--primary btn--lg">
+            <span>Перейти к&nbsp;оплате</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="booking__hint">Нажимая «Перейти к&nbsp;оплате», вы&nbsp;откроете страницу платёжного шлюза.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FAQ
+       ========================================================= -->
+  <section class="section faq" id="faq">
+    <div class="container faq__inner">
+      <header class="section__head">
+        <p class="section__eyebrow">Частые вопросы</p>
+        <h2 class="section__title">Что важно знать перед&nbsp;рейсом</h2>
+      </header>
+
+      <div class="faq__list">
+        <details class="faq__item">
+          <summary>Что делать, если погода испортится?</summary>
+          <div class="faq__item-content"><p>ответ 1</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Можно&nbsp;ли арендовать весь теплоход?</summary>
+          <div class="faq__item-content"><p>ответ 2</p></div>
+        </details>
+        <details class="faq__item">
+          <summary>Есть&nbsp;ли скидки для&nbsp;детей?</summary>
+          <div class="faq__item-content">
+            <p>Дети до 6 лет — бесплатно в сопровождении взрослых (из расчета 1 ребенок — 1 взрослый)</p>
+          </div>
+        </details>
+        <details class="faq__item">
+          <summary>Доступен&nbsp;ли корабль для&nbsp;маломобильных гостей?</summary>
+          <div class="faq__item-content"><p>ответ 4</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#icon-anchor"></use></svg>
+        <div>
+          <p class="footer__name">ФЛАГМАН</p>
+          <p class="footer__sub">Речные прогулки по Москве</p>
+        </div>
+      </div>
+
+      <div class="footer__cols">
+        <div>
+          <h5>Контакты</h5>
+          <p><a href="tel:+79262192192">+7 (926)&nbsp;219-21-92</a></p>
+          <p><a href="mailto:info@flagman-river.ru">info@flagman-river.ru</a></p>
+          <p>Москва, Москва-река, причал «Нескучный сад»</p>
+        </div>
+        <div>
+          <h5>Навигация</h5>
+          <p><a href="#fleet">Корабли</a></p>
+          <p><a href="#route">Маршрут</a></p>
+          <p><a href="#menu">Меню</a></p>
+          <p><a href="#booking">Бронирование</a></p>
+        </div>
+        <div>
+          <h5>Документы</h5>
+          <p><a href="#">Публичная оферта</a></p>
+          <p><a href="#">Политика конфиденциальности</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>© 2026 «ФЛАГМАН» · Речные прогулки по Москве</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       PAYMENT MODAL (имитация перехода на оплату)
+       ========================================================= -->
+  <div class="modal" id="paymentModal" role="dialog" aria-modal="true" aria-labelledby="payTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card">
+      <button class="modal__close" aria-label="Закрыть" data-close>&times;</button>
+      <div class="modal__icon">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#icon-anchor"></use></svg>
+      </div>
+      <h3 id="payTitle">Готовим вашу бронь…</h3>
+      <p>Сейчас вы&nbsp;будете перенаправлены на&nbsp;защищённую страницу оплаты. На&nbsp;e-mail придёт подтверждение и&nbsp;билет.</p>
+      <div class="modal__summary" id="paySummary"></div>
+      <div class="modal__actions">
+        <button class="btn btn--primary" id="payProceed">
+          <span>Перейти к&nbsp;оплате</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="btn btn--ghost" data-close>Изменить заявку</button>
+      </div>
+      <p class="modal__note">Это демонстрационная форма.</p>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       LIGHTBOX FOR GALLERY
+       ========================================================= -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии" hidden>
+    <button class="lightbox__close" aria-label="Закрыть" data-close>&times;</button>
+    <button class="lightbox__prev" aria-label="Предыдущее" data-prev>‹</button>
+    <button class="lightbox__next" aria-label="Следующее" data-next>›</button>
+    <img id="lightboxImg" alt="" />
+    <p class="lightbox__caption" id="lightboxCaption"></p>
+  </div>
+
+  <!-- =========================================================
+       SVG SYMBOLS (used by <use href="#...">)
+       ========================================================= -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-anchor" viewBox="0 0 64 64">
+      <path d="M51.039,42.409c-0.395-0.382-1.029-0.375-1.414,0.023l-3.411,3.522c-0.384,0.396-0.374,1.029,0.023,1.414c0.193,0.188,0.444,0.281,0.695,0.281c0.261,0,0.522-0.101,0.719-0.305l1.545-1.596c-1.013,8.044-7.715,14.323-15.942,14.684V22.666h6.948c0.553,0,1-0.447,1-1c0-0.553-0.447-1-1-1h-6.948v-9.221c2.705-0.476,4.768-2.837,4.768-5.676c0-3.182-2.588-5.77-5.768-5.77c-3.182,0-5.77,2.588-5.77,5.77c0,2.839,2.064,5.2,4.769,5.676v9.221h-6.949c-0.553,0-1,0.447-1,1c0,0.553,0.447,1,1,1h6.949v37.793c-8.46-0.118-15.418-6.501-16.451-14.712l1.55,1.598c0.196,0.202,0.457,0.304,0.718,0.304c0.251,0,0.502-0.094,0.696-0.282c0.396-0.384,0.406-1.018,0.021-1.414l-3.414-3.521c-0.386-0.397-1.019-0.405-1.414-0.022c-0.272,0.263-0.348,0.641-0.254,0.982c-0.021,0.081-0.05,0.16-0.05,0.248c0,10.304,8.322,18.691,18.598,18.819V63c0,0.553,0.447,1,1,1c0.553,0,1-0.447,1-1v-0.567c10.038-0.394,18.089-8.66,18.089-18.793c0-0.088-0.029-0.166-0.05-0.247C51.387,43.051,51.311,42.673,51.039,42.409z M28.485,5.77c0-2.078,1.691-3.77,3.77-3.77s3.768,1.691,3.768,3.77c0,2.078-1.69,3.769-3.768,3.769S28.485,7.848,28.485,5.77z" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <script src="script.js"></script>
+</body>
+</html>
