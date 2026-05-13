@@ -617,7 +617,7 @@
       // === ИНТЕГРАЦИЯ С ПЛАТЁЖНЫМ ШЛЮЗОМ ===
       // Замените эту строку на window.location.href = <ссылка от ЮKassa / CloudPayments>;
       setTimeout(() => {
-        alert('Демо-режим: здесь произойдёт переход на платёжный шлюз (ЮKassa / CloudPayments / Тинькофф). Подключите шлюз в файле script.js (см. комментарий "ИНТЕГРАЦИЯ С ПЛАТЁЖНЫМ ШЛЮЗОМ").');
+        alert('Демо-режим: здесь произойдёт переход на платёжный шлюз');
         payProceed.disabled = false;
         payProceed.innerHTML = '<span>Перейти к оплате</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
         closeModal();
