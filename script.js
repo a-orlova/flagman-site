@@ -11,13 +11,26 @@
   const nav = document.getElementById('topnav');
   const navMenu = document.getElementById('primary-nav');
   const navBurger = document.querySelector('.nav__burger');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const onScroll = () => {
-    if (window.scrollY > 24) nav.classList.add('is-scrolled');
+    const y = window.scrollY;
+    if (y > 24) nav.classList.add('is-scrolled');
     else nav.classList.remove('is-scrolled');
+    if (scrollTopBtn) scrollTopBtn.classList.toggle('is-visible', y > 420);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      });
+    });
+  }
 
   navBurger.addEventListener('click', () => {
     const isOpen = navMenu.classList.toggle('is-open');
@@ -40,7 +53,7 @@
      ----------------------------------------------------------------- */
   const revealTargets = document.querySelectorAll(
     '.section__head, .pain-card, .ship, .route__stage, .route__stop, ' +
-    '.menu__viewer, .menu__tabs, .gallery__grid, .booking__form, ' +
+    '.menu__viewer, .menu__tabs, .gallery__grid, .guest-info__card, ' +
     '.booking__intro, .faq__item, .footer'
   );
   revealTargets.forEach(el => el.classList.add('reveal'));
@@ -477,183 +490,7 @@
   }
 
   /* -----------------------------------------------------------------
-     6. BOOKING FORM: validation + payment modal
-     -----------------------------------------------------------------
-     Each ship has its own list of piers and each pier has its own set
-     of departure times. We change "Причал" and "Время" dynamically
-     whenever the user picks a different ship / pier. The schedule
-     below mirrors the operator's official timetable (Лот 12 Лоцман /
-     Лот 5 Флагман). Times are "Отход" — the moment the ship leaves
-     each pier.
-     ----------------------------------------------------------------- */
-  const form = document.getElementById('bookingForm');
-  const shipOpts = document.querySelectorAll('.ship-switch__opt');
-  const pierSelect = document.getElementById('bookPier');
-  const timeSelect = document.getElementById('bookTime');
-
-  const schedule = {
-    'Флагман': {
-      'Киевский':       ['09:50', '12:39', '15:28', '18:17', '21:06', '23:55'],
-      'Воробьёвы горы': ['10:19', '13:08', '15:57', '18:46', '21:35', '00:24'],
-      'Нескучный сад':  ['10:42', '11:47', '13:31', '14:36', '16:20', '17:25',
-                         '19:09', '20:14', '21:58', '23:03', '00:47', '01:52'],
-      'Китай-город':    ['11:16', '14:05', '16:54', '19:43', '22:32', '01:21']
-    },
-    'Лоцман': {
-      'Зарядье':       ['11:00', '12:10', '13:20', '14:30', '15:40', '16:50',
-                        '18:00', '19:10', '20:20', '21:30', '22:40'],
-      'Патриарший':    ['11:15', '12:25', '13:35', '14:45', '15:55', '17:05',
-                        '18:15', '19:25', '20:35', '21:45', '22:55'],
-      'Парк Горького': ['11:45', '12:55', '14:05', '15:15', '16:25', '17:35',
-                        '18:45', '19:55', '21:05', '22:15', '23:25']
-    }
-  };
-
-  const getCurrentShip = () => {
-    const checked = form && form.querySelector('input[name="ship"]:checked');
-    return checked ? checked.value : '';
-  };
-
-  const fillSelect = (select, options, placeholder) => {
-    if (!select) return;
-    const previous = select.value;
-    select.innerHTML = '';
-    const ph = document.createElement('option');
-    ph.value = '';
-    ph.textContent = placeholder;
-    select.appendChild(ph);
-    options.forEach(value => {
-      const opt = document.createElement('option');
-      opt.value = value;
-      opt.textContent = value;
-      select.appendChild(opt);
-    });
-    // Try to keep the previous value if it's still available.
-    if (previous && options.includes(previous)) select.value = previous;
-  };
-
-  const refreshPiers = () => {
-    const ship = getCurrentShip();
-    const piers = schedule[ship] ? Object.keys(schedule[ship]) : [];
-    fillSelect(pierSelect, piers, piers.length ? 'Выберите причал' : 'Сначала выберите корабль');
-    refreshTimes();
-  };
-
-  const refreshTimes = () => {
-    const ship = getCurrentShip();
-    const pier = pierSelect && pierSelect.value;
-    const times = (ship && pier && schedule[ship] && schedule[ship][pier]) || [];
-    fillSelect(timeSelect, times, times.length ? 'Выберите рейс' : 'Сначала выберите причал');
-  };
-
-  // Visual sync for ship radio buttons + reactive piers/times.
-  shipOpts.forEach(opt => {
-    const input = opt.querySelector('input');
-    input.addEventListener('change', () => {
-      shipOpts.forEach(o => o.classList.remove('is-checked'));
-      if (input.checked) opt.classList.add('is-checked');
-      refreshPiers();
-    });
-  });
-
-  if (pierSelect) pierSelect.addEventListener('change', refreshTimes);
-
-  // Initial population (a ship is preselected in HTML).
-  refreshPiers();
-
-  // Prefill ship when clicking CTAs with data-prefill-ship.
-  document.querySelectorAll('[data-prefill-ship]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const ship = btn.dataset.prefillShip;
-      const map = { flagman: 'Флагман', lotsman: 'Лоцман' };
-      const value = map[ship];
-      const radio = form && form.querySelector(`input[name="ship"][value="${value}"]`);
-      if (radio) {
-        radio.checked = true;
-        shipOpts.forEach(o => o.classList.remove('is-checked'));
-        radio.closest('.ship-switch__opt').classList.add('is-checked');
-        refreshPiers();
-      }
-    });
-  });
-
-  // set min date = today
-  const bookDate = document.getElementById('bookDate');
-  if (bookDate) {
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const dd = String(today.getDate()).padStart(2, '0');
-    bookDate.min = `${yyyy}-${mm}-${dd}`;
-  }
-
-  // modal
-  const modal = document.getElementById('paymentModal');
-  const paySummary = document.getElementById('paySummary');
-  const payProceed = document.getElementById('payProceed');
-
-  const openModal = (summary) => {
-    paySummary.innerHTML = '<dl>' + summary.map(row =>
-      `<div><dt>${row[0]}</dt><dd>${row[1]}</dd></div>`
-    ).join('') + '</dl>';
-    modal.hidden = false;
-    document.body.classList.add('is-locked');
-  };
-  const closeModal = () => {
-    modal.hidden = true;
-    document.body.classList.remove('is-locked');
-  };
-  if (modal) {
-    modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeModal));
-    document.addEventListener('keydown', e => {
-      if (!modal.hidden && e.key === 'Escape') closeModal();
-    });
-  }
-
-  if (payProceed) {
-    payProceed.addEventListener('click', () => {
-      payProceed.disabled = true;
-      payProceed.innerHTML = '<span>Перенаправляем…</span>';
-      // === ИНТЕГРАЦИЯ С ПЛАТЁЖНЫМ ШЛЮЗОМ ===
-      // Замените эту строку на window.location.href = <ссылка от ЮKassa / CloudPayments>;
-      setTimeout(() => {
-        alert('Демо-режим: здесь произойдёт переход на платёжный шлюз');
-        payProceed.disabled = false;
-        payProceed.innerHTML = '<span>Перейти к оплате</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-        closeModal();
-      }, 900);
-    });
-  }
-
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // basic check
-      const requiredOK = Array.from(form.querySelectorAll('[required]'))
-        .every(el => el.checkValidity ? el.checkValidity() : !!el.value);
-      if (!requiredOK) {
-        form.querySelectorAll('[required]').forEach(el => {
-          if (el.checkValidity && !el.checkValidity()) el.reportValidity?.();
-        });
-        return;
-      }
-      const data = new FormData(form);
-      const summary = [
-        ['Корабль', data.get('ship')],
-        ['Причал', data.get('pier')],
-        ['Дата', data.get('date')],
-        ['Время', data.get('time')],
-        ['Гостей', data.get('guests')],
-        ['Гость', data.get('name')],
-        ['Телефон', data.get('phone')],
-        ['E-mail', data.get('email')],
-      ];
-      openModal(summary);
-    });
-  }
-
-  /* -----------------------------------------------------------------
-     7. FAQ — smooth open / close animation
+     6. FAQ — smooth open / close animation
      -----------------------------------------------------------------
      Native <details> toggles content via `display: none`, which makes
      a height transition impossible. We intercept the click on the
@@ -715,7 +552,7 @@
   });
 
   /* -----------------------------------------------------------------
-     8. Footer year (auto)
+     7. Footer year (auto)
      ----------------------------------------------------------------- */
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

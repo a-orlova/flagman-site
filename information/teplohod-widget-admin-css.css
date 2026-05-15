@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=Manrope:wght@400;500;600;700&display=swap");
+
+.ti-tickets-widget {
+  font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #1A2733;
+}
+
+.ti-tickets-widget a:not(.btn):not(.ti-tickets-event-tickets-buy):not(.ti-tickets-event-tickets-more) {
+  color: #2C5A78;
+  text-decoration: none;
+}
+.ti-tickets-widget a:not(.btn):not(.ti-tickets-event-tickets-buy):not(.ti-tickets-event-tickets-more):hover {
+  color: #3B6E8F;
+  text-decoration: underline;
+}
+
+.ti-tickets-filters-wrapper {
+  display: none !important;
+}
+
+.ti-tickets-filters {
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid rgba(60, 100, 130, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(31, 71, 102, 0.06);
+  overflow: hidden;
+}
+
+.ti-tickets-filters__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FBF7EE 100%);
+  border-bottom: 1px solid rgba(60, 100, 130, 0.12);
+}
+
+.ti-tickets-filters__header h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: #1A2733;
+  margin: 0 !important;
+}
+
+.ti-tickets-filters__button--left {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(60, 100, 130, 0.22);
+  background: #FFFFFF center no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%232C5A78' stroke-width='1.8' stroke-linecap='round' d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E");
+  cursor: pointer;
+}
+
+.ti-tickets-widget .ti-tickets-filters--inline-wrapper {
+  padding: 14px 14px 16px !important;
+  background: #F4F8FB;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+}
+
+.ti-tickets-widget .ti-tickets-filters--route-list,
+.ti-tickets-widget .ti-tickets-filters--ship-list,
+.ti-tickets-widget .ti-tickets-filters--feat-list {
+  padding: 14px 14px 16px !important;
+  background: #F4F8FB;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  gap: 10px 14px !important;
+  grid-template-columns: none !important;
+}
+
+.ti-tickets-widget .ti-tickets-filters--route-list > .ti-tickets-filters--route,
+.ti-tickets-widget .ti-tickets-filters--ship-list > .ti-tickets-filters--route,
+.ti-tickets-widget .ti-tickets-filters--feat-list > .ti-tickets-filters--route {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 8px 10px !important;
+  margin: 0 !important;
+  width: auto !important;
+  max-width: 100%;
+}
+
+.ti-tickets-widget .ti-tickets-filters--route .route-name {
+  margin-bottom: 0 !important;
+}
+
+.ti-tickets-widget .ti-tickets-filters--loc,
+.ti-tickets-widget .ti-tickets-filters--ship,
+.ti-tickets-widget .ti-tickets-filters--feat,
+.ti-tickets-widget .ti-tickets-filters--time,
+.ti-tickets-widget .ti-tickets-filters--duration,
+.ti-tickets-widget .ti-tickets-filters--price {
+  min-width: 0 !important;
+  background: #FFFFFF !important;
+}
+
+.ti-tickets-filters-checkbox__wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin: 0 !important;
+  background: #FFFFFF;
+  border: 1px solid rgba(60, 100, 130, 0.12);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.ti-tickets-filters-checkbox__wrapper:has(.ti-tickets-filters-checkbox:checked) {
+  border-color: #2C5A78;
+  box-shadow: 0 0 0 3px rgba(44, 90, 120, 0.12);
+}
+
+.ti-tickets-filters-checkbox__label {
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #41525E !important;
+}
+
+.ti-tickets-filters-checkbox {
+  accent-color: #2C5A78;
+}
+
+.ti-tickets-events-mode-list .ti-tickets-event {
+  margin-bottom: 22px !important;
+}
+
+.ti-tickets-events-mode-full__stack {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: clamp(18px, 3vw, 32px);
+  padding: clamp(18px, 3vw, 26px);
+  background: #FFFFFF;
+  border: 1px solid rgba(60, 100, 130, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(31, 71, 102, 0.06);
+}
+
+.ti-tickets-events-mode-full__left {
+  flex: 0 0 clamp(200px, 32vw, 320px);
+  max-width: 100%;
+}
+
+.ti-tickets-events-mode-full__right {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.ti-tickets-events-mode-full__right .ti-tickets-event__inner {
+  padding-top: 0 !important;
+}
+
+.ti-tickets-events-mode-full__right .ti-tickets-event-title {
+  margin-top: 4px !important;
+}
+
+@media (max-width: 720px) {
+  .ti-tickets-events-mode-full__stack {
+    flex-wrap: wrap;
+  }
+  .ti-tickets-events-mode-full__left {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+.ti-tickets-event-image {
+  margin: 0 !important;
+}
+
+.ti-tickets-event-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(60, 100, 130, 0.12);
+}
+
+.ti-tickets-event-route__number {
+  background-color: #2C5A78 !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.ti-tickets-event-route__name {
+  background-color: rgba(44, 90, 120, 0.09) !important;
+  color: #1A2733 !important;
+  border-radius: 10px !important;
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.ti-tickets-event-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1A2733;
+  line-height: 1.25;
+  margin: 12px 0 10px !important;
+}
+
+.ti-tickets-widget .ti-tickets-event-summary,
+.ti-tickets-widget .ti-tickets-event-summary p,
+.ti-tickets-widget .ti-tickets-event-summary li {
+  font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  color: #41525E !important;
+}
+
+.ti-tickets-event-overall__item {
+  font-size: 14px !important;
+  color: #41525E !important;
+}
+
+.ti-tickets-event-overall__item strong {
+  color: #1A2733;
+}
+
+.ti-tickets-event-icon svg path {
+  fill: #2C5A78;
+}
+
+.ti-tickets-event-features-feature {
+  display: inline-block;
+  margin: 4px 6px 4px 0 !important;
+  padding: 5px 11px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #2C5A78 !important;
+  background: #E7F0F6;
+  border-radius: 999px;
+  border: none !important;
+}
+
+.ti-tickets-widget .table {
+  width: 100%;
+  margin-top: 14px !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid rgba(60, 100, 130, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.ti-tickets-widget .table tr:nth-child(even) td {
+  background: #F4F8FB;
+}
+
+.ti-tickets-widget .table td {
+  padding: 12px 14px !important;
+  border-top: 1px solid rgba(60, 100, 130, 0.12) !important;
+  font-size: 14px !important;
+}
+
+.ti-tickets-widget .table tr:first-child td {
+  border-top: none !important;
+}
+
+.ti-tickets-event-tickets-price span {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700 !important;
+  font-size: 17px !important;
+  color: #2C5A78 !important;
+}
+
+.ti-tickets-widget .btn {
+  padding: 12px 22px !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+}
+
+.ti-tickets-widget .btn-primary,
+.ti-tickets-widget .btn-success,
+.ti-tickets-widget .btn-info {
+  background: #2C5A78 !important;
+  border-color: #2C5A78 !important;
+  color: #fff !important;
+  box-shadow: 0 6px 20px rgba(44, 90, 120, 0.22);
+}
+
+.ti-tickets-widget .btn-primary:hover,
+.ti-tickets-widget .btn-success:hover,
+.ti-tickets-widget .btn-info:hover {
+  background: #3B6E8F !important;
+  border-color: #3B6E8F !important;
+  color: #fff !important;
+}
+
+/* Специфичнее .ti-tickets-widget a:not(.btn), иначе «Купить билеты» остаётся как обычная ссылка */
+.ti-tickets-widget a.ti-tickets-event-tickets-buy {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px !important;
+  border-radius: 10px !important;
+  font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.02em;
+  background: #2C5A78 !important;
+  background-image: none !important;
+  border: 1px solid #2C5A78 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  box-shadow: 0 6px 20px rgba(44, 90, 120, 0.22);
+}
+
+.ti-tickets-widget a.ti-tickets-event-tickets-buy:hover {
+  background: #3B6E8F !important;
+  border-color: #3B6E8F !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.ti-tickets-event-tickets-more {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  background: transparent !important;
+  border: 1px solid rgba(60, 100, 130, 0.22) !important;
+  color: #2C5A78 !important;
+  text-decoration: none !important;
+}
+
+.ti-tickets-event-tickets-more:hover {
+  background: #E7F0F6 !important;
+  border-color: #A9C8DA !important;
+  color: #3B6E8F !important;
+  text-decoration: none !important;
+}
+
+.ti-tickets-event-tickets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  margin-top: 14px !important;
+}

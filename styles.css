@@ -1219,6 +1219,174 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 /* =================================================================
+   GUEST INFO (charter, refunds, rules, audio)
+   ================================================================= */
+.guest-info {
+  background: linear-gradient(180deg, var(--c-bg-2) 0%, var(--c-bg) 100%);
+}
+.guest-info__grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .guest-info__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    align-items: stretch;
+  }
+  .guest-info__card--accent {
+    grid-column: 1 / -1;
+  }
+}
+.guest-info__card {
+  margin: 0;
+  padding: 26px 24px;
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  box-shadow: var(--c-shadow-sm);
+}
+.guest-info__card--accent {
+  border-color: var(--c-border-2);
+  background: linear-gradient(145deg, #FFFFFF 0%, var(--c-card) 100%);
+}
+.guest-info__card-title {
+  font-family: var(--f-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--c-text);
+  margin: 0 0 18px 0;
+  line-height: 1.25;
+}
+.guest-info__split {
+  display: grid;
+  gap: 22px;
+}
+@media (min-width: 560px) {
+  .guest-info__split {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+}
+.guest-info__price-block {
+  padding: 18px 0 0 0;
+  border-top: 1px solid var(--c-border);
+}
+.guest-info__price-block:first-of-type {
+  padding-top: 0;
+  border-top: none;
+}
+@media (min-width: 560px) {
+  .guest-info__price-block {
+    padding: 0 22px 0 0;
+    border-top: none;
+    border-right: 1px solid var(--c-border);
+  }
+  .guest-info__price-block:last-child {
+    padding-right: 0;
+    padding-left: 22px;
+    border-right: none;
+  }
+}
+.guest-info__ship-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  margin: 0 0 8px 0;
+}
+.guest-info__price {
+  margin: 0 0 6px 0;
+  font-family: var(--f-display);
+  font-size: 17px;
+  color: var(--c-text);
+}
+.guest-info__amount {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--c-primary);
+}
+.guest-info__meta {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: var(--c-text-2);
+}
+.guest-info__detail {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--c-text-2);
+}
+.guest-info__footnote {
+  margin: 22px 0 0 0;
+  padding-top: 18px;
+  border-top: 1px dashed var(--c-border);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--c-text-2);
+}
+.guest-info__charter-call {
+  margin: 20px 0 0 0;
+  padding: 22px 24px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+.guest-info__charter-call-label {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+}
+.guest-info__charter-call-tel {
+  font-family: var(--f-display);
+  font-size: clamp(22px, 4vw, 28px);
+  font-weight: 600;
+  color: var(--c-primary);
+  text-decoration: none;
+}
+.guest-info__charter-call-tel:hover {
+  color: var(--c-primary-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.guest-info__charter-call-hint {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--c-text-2);
+}
+.guest-info__lead {
+  margin: 0 0 14px 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--c-text-2);
+}
+.guest-info__list {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--c-text-2);
+}
+.guest-info__list--compact {
+  gap: 8px;
+}
+.guest-info__list li::marker {
+  color: var(--c-gold);
+}
+
+/* =================================================================
    BOOKING
    ================================================================= */
 .booking { background: var(--c-bg); }
@@ -1226,16 +1394,469 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .booking__inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
+  gap: 48px;
   align-items: start;
-}
-@media (min-width: 980px) {
-  .booking__inner { grid-template-columns: 1fr 1.1fr; gap: 80px; }
 }
 
 .booking__intro .section__title { text-align: left; }
 .booking__intro .section__lede { text-align: left; margin: 0 0 32px 0; }
 .booking__intro .section__eyebrow { text-align: left; display: block; }
+
+.booking__section-head {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 0 auto 36px;
+  max-width: 760px;
+}
+.booking__section-head .section__title { margin-bottom: 0.35em; }
+.booking__section-head .section__lede {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 62ch;
+}
+
+.booking__teplohod {
+  grid-column: 1 / -1;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  padding: 28px 26px;
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--c-shadow-sm);
+}
+.booking__teplohod-heading {
+  font-family: var(--f-display);
+  font-size: clamp(20px, 2.5vw, 24px);
+  font-weight: 600;
+  color: var(--c-text);
+  margin: 0 0 10px 0;
+  line-height: 1.25;
+}
+.booking__teplohod-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--c-text-2);
+  margin: 0 0 22px 0;
+  max-width: 72ch;
+}
+/* Резерв высоты до подгрузки виджета (избегает скачка макета) */
+.teplohod-info-wrapper {
+  min-height: 280px;
+  border-radius: var(--radius-sm);
+  overflow: visible;
+}
+
+/* -----------------------------------------------------------------
+   TEPLOHOD.INFO — внешний вид виджета в стиле лендинга
+   Виджет вставляет разметку .ti-tickets-widget с классами ti-*.
+   Ниже — переопределения типографики, «программы», фильтров,
+   карточек рейсов и таблицы цен (поверх дефолтного Bootstrap внутри
+   их скрипта). Часть правил дублируется hex-файлом для кабинета.
+   ----------------------------------------------------------------- */
+.booking__teplohod .ti-tickets-widget {
+  font-family: var(--f-body) !important;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--c-text);
+  isolation: isolate;
+}
+
+.booking__teplohod .ti-tickets-widget a:not(.btn):not(.ti-tickets-event-tickets-buy):not(.ti-tickets-event-tickets-more) {
+  color: var(--c-primary);
+  text-decoration: none;
+}
+.booking__teplohod .ti-tickets-widget a:not(.btn):not(.ti-tickets-event-tickets-buy):not(.ti-tickets-event-tickets-more):hover {
+  color: var(--c-primary-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Блок фильтров виджета скрыт (разметка остаётся в DOM) */
+.booking__teplohod .ti-tickets-filters-wrapper {
+  display: none !important;
+}
+
+.booking__teplohod .ti-tickets-filters {
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  box-shadow: var(--c-shadow-sm);
+  overflow: hidden;
+}
+.booking__teplohod .ti-tickets-filters__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, var(--c-card) 0%, var(--c-bg-2) 100%);
+  border-bottom: 1px solid var(--c-border);
+  cursor: pointer;
+}
+.booking__teplohod .ti-tickets-filters__header h2 {
+  font-family: var(--f-display);
+  font-size: clamp(17px, 2vw, 20px);
+  font-weight: 600;
+  color: var(--c-text);
+  margin: 0 !important;
+  line-height: 1.25;
+}
+.booking__teplohod .ti-tickets-filters__button--left {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid var(--c-border-2);
+  background: var(--c-card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%232C5A78' stroke-width='1.8' stroke-linecap='round' d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E") center no-repeat;
+  cursor: pointer;
+  transition: background var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+.booking__teplohod .ti-tickets-filters.open .ti-tickets-filters__button--left,
+.booking__teplohod .ti-tickets-filters.is-open .ti-tickets-filters__button--left {
+  transform: rotate(180deg);
+}
+
+/* Контент фильтров: один горизонтальный поток чипов (как у «Стоимость прогулки») */
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--inline-wrapper {
+  padding: 14px 14px 16px !important;
+  background: var(--c-bg);
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+}
+
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--route-list,
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--ship-list,
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--feat-list {
+  padding: 14px 14px 16px !important;
+  background: var(--c-bg);
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  gap: 10px 14px !important;
+  grid-template-columns: none !important;
+}
+
+/* Чанки, которые виджет раскладывал столбцами сеткой → склеиваем в горизонтальную линию чипов */
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--route-list > .ti-tickets-filters--route,
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--ship-list > .ti-tickets-filters--route,
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--feat-list > .ti-tickets-filters--route {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 8px 10px !important;
+  margin: 0 !important;
+  width: auto !important;
+  max-width: 100%;
+}
+
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--route .route-name {
+  margin-bottom: 0 !important;
+}
+
+/* Снимаем min-width и цветные подложки из дефолтного CSS виджета */
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--loc,
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--ship,
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--feat,
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--time,
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--duration,
+.booking__teplohod .ti-tickets-widget .ti-tickets-filters--price {
+  min-width: 0 !important;
+  background: var(--c-card) !important;
+}
+
+.booking__teplohod .ti-tickets-filters-checkbox__wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin: 0 !important;
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+}
+.booking__teplohod .ti-tickets-filters-checkbox__wrapper:hover {
+  border-color: var(--c-primary-3);
+}
+.booking__teplohod .ti-tickets-filters-checkbox__wrapper:has(.ti-tickets-filters-checkbox:checked) {
+  border-color: var(--c-primary);
+  box-shadow: 0 0 0 3px rgba(44, 90, 120, 0.12);
+}
+.booking__teplohod .ti-tickets-filters-checkbox__label {
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: var(--c-text-2) !important;
+}
+.booking__teplohod .ti-tickets-filters-checkbox {
+  accent-color: var(--c-primary);
+  width: 16px;
+  height: 16px;
+}
+
+/* Карточка рейса */
+.booking__teplohod .ti-tickets-events-mode-list .ti-tickets-event {
+  margin-bottom: 22px !important;
+}
+.booking__teplohod .ti-tickets-events-mode-full__stack {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: clamp(18px, 3vw, 32px);
+  padding: clamp(18px, 3vw, 26px);
+  background: var(--c-card);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  box-shadow: var(--c-shadow-sm);
+}
+.booking__teplohod .ti-tickets-events-mode-full__left {
+  flex: 0 0 clamp(200px, 32vw, 320px);
+  max-width: 100%;
+}
+.booking__teplohod .ti-tickets-events-mode-full__right {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.booking__teplohod .ti-tickets-events-mode-full__right .ti-tickets-event__inner {
+  padding-top: 0 !important;
+}
+.booking__teplohod .ti-tickets-events-mode-full__right .ti-tickets-event-title {
+  margin-top: 4px !important;
+}
+@media (max-width: 720px) {
+  .booking__teplohod .ti-tickets-events-mode-full__stack {
+    flex-wrap: wrap;
+  }
+  .booking__teplohod .ti-tickets-events-mode-full__left {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+.booking__teplohod .ti-tickets-event-image {
+  margin: 0 !important;
+}
+.booking__teplohod .ti-tickets-event-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--c-border);
+  box-shadow: var(--c-shadow-sm);
+}
+
+/* Снимаем «кислотный» цвет маршрута — в палитру бренда */
+.booking__teplohod .ti-tickets-event-route__number {
+  background-color: var(--c-primary) !important;
+  color: #fff !important;
+  border-radius: 10px !important;
+  font-family: var(--f-display);
+  font-weight: 700 !important;
+}
+.booking__teplohod .ti-tickets-event-route__name {
+  background-color: rgba(44, 90, 120, 0.09) !important;
+  color: var(--c-text) !important;
+  border-radius: 10px !important;
+  font-family: var(--f-display);
+  font-weight: 600 !important;
+}
+
+.booking__teplohod .ti-tickets-event-title {
+  font-family: var(--f-display);
+  font-size: clamp(19px, 2.4vw, 24px);
+  font-weight: 600;
+  color: var(--c-text);
+  line-height: 1.25;
+  margin: 12px 0 10px !important;
+}
+
+.booking__teplohod .ti-tickets-event-summary,
+.booking__teplohod .ti-tickets-event-summary p {
+  font-size: 14.5px !important;
+  color: var(--c-text-2) !important;
+  line-height: 1.6 !important;
+}
+
+.booking__teplohod .ti-tickets-event-overall__item {
+  font-size: 14px !important;
+  color: var(--c-text-2) !important;
+  padding: 6px 0 !important;
+  border-color: var(--c-border) !important;
+}
+.booking__teplohod .ti-tickets-event-overall__item strong {
+  color: var(--c-text);
+  font-weight: 600;
+}
+.booking__teplohod .ti-tickets-event-icon svg path {
+  fill: var(--c-primary);
+}
+
+/* Чипы особенностей рейса */
+.booking__teplohod .ti-tickets-event-features-feature {
+  display: inline-block;
+  margin: 4px 6px 4px 0 !important;
+  padding: 5px 11px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-primary) !important;
+  background: var(--c-river);
+  border-radius: 999px;
+  border: none !important;
+}
+
+/* Таблица тарифов */
+.booking__teplohod .ti-tickets-widget .table {
+  width: 100%;
+  margin: 14px 0 0 !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--c-card);
+}
+.booking__teplohod .ti-tickets-widget .table tr:nth-child(even) td {
+  background: var(--c-bg);
+}
+.booking__teplohod .ti-tickets-widget .table td {
+  padding: 12px 14px !important;
+  border-top: 1px solid var(--c-border) !important;
+  vertical-align: middle;
+  font-size: 14px !important;
+}
+.booking__teplohod .ti-tickets-widget .table tr:first-child td {
+  border-top: none !important;
+}
+.booking__teplohod .ti-tickets-event-tickets-title span {
+  color: var(--c-text-2) !important;
+}
+.booking__teplohod .ti-tickets-event-tickets-price span {
+  font-family: var(--f-display);
+  font-weight: 700 !important;
+  font-size: 17px !important;
+  color: var(--c-primary) !important;
+  white-space: nowrap;
+}
+
+/* Кнопки Bootstrap внутри виджета — не смешивать с .btn лендинга */
+.booking__teplohod .ti-tickets-widget .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px !important;
+  border-radius: var(--radius-sm) !important;
+  font-family: var(--f-body) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.02em;
+  border-width: 1px !important;
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+  white-space: normal;
+  text-align: center;
+}
+.booking__teplohod .ti-tickets-widget .btn-primary,
+.booking__teplohod .ti-tickets-widget .btn-success,
+.booking__teplohod .ti-tickets-widget .btn-info {
+  background: var(--c-primary) !important;
+  border-color: var(--c-primary) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 20px rgba(44, 90, 120, 0.22);
+}
+.booking__teplohod .ti-tickets-widget .btn-primary:hover,
+.booking__teplohod .ti-tickets-widget .btn-success:hover,
+.booking__teplohod .ti-tickets-widget .btn-info:hover {
+  background: var(--c-primary-2) !important;
+  border-color: var(--c-primary-2) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+.booking__teplohod .ti-tickets-widget .btn-default,
+.booking__teplohod .ti-tickets-widget .btn-secondary {
+  background: var(--c-card) !important;
+  border-color: var(--c-border-2) !important;
+  color: var(--c-primary) !important;
+}
+
+/* Основная кнопка покупки (не Bootstrap .btn — класс виджета) */
+.booking__teplohod .ti-tickets-event-tickets-buy {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px !important;
+  border-radius: var(--radius-sm) !important;
+  font-family: var(--f-body) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.02em;
+  background: var(--c-primary) !important;
+  background-image: none !important;
+  border: 1px solid var(--c-primary) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  box-shadow: 0 6px 20px rgba(44, 90, 120, 0.22);
+  transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+.booking__teplohod .ti-tickets-event-tickets-buy:hover {
+  background: var(--c-primary-2) !important;
+  border-color: var(--c-primary-2) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+  text-decoration: none !important;
+}
+
+.booking__teplohod .ti-tickets-event-tickets-more {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px !important;
+  border-radius: var(--radius-sm) !important;
+  font-family: var(--f-body) !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  background: transparent !important;
+  border: 1px solid var(--c-border-2) !important;
+  color: var(--c-primary) !important;
+  text-decoration: none !important;
+  transition: border-color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
+}
+.booking__teplohod .ti-tickets-event-tickets-more:hover {
+  background: var(--c-river) !important;
+  border-color: var(--c-primary-3) !important;
+  color: var(--c-primary-2) !important;
+  text-decoration: none !important;
+}
+
+.booking__teplohod .ti-tickets-event-tickets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  margin-top: 14px !important;
+}
+
+.booking__teplohod-text code {
+  font-size: 0.88em;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: var(--c-river);
+  color: var(--c-primary);
+}
 
 .booking__perks {
   display: grid;
@@ -1276,185 +1897,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   color: var(--c-primary);
 }
 
-.booking__form {
-  background: var(--c-card);
-  border: 1px solid var(--c-border);
-  border-radius: var(--radius-lg);
-  padding: 36px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  box-shadow: var(--c-shadow);
-}
-@media (max-width: 600px) {
-  .booking__form { grid-template-columns: 1fr; padding: 28px 22px; }
-}
-
-.field { display: flex; flex-direction: column; gap: 6px; }
-.field--full { grid-column: 1 / -1; }
-.field > label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--c-text-3);
-}
-.field input:not([type="checkbox"]):not([type="radio"]),
-.field select,
-.field textarea {
-  width: 100%;
-  padding: 14px 16px;
-  background: var(--c-bg);
-  border: 1px solid var(--c-border);
-  border-radius: var(--radius-sm);
-  font-family: inherit;
-  font-size: 15px;
-  color: var(--c-text);
-  transition: all var(--t-fast) var(--ease);
-  -webkit-appearance: none;
-  appearance: none;
-}
-.field select {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1.5l5 5 5-5' stroke='%232C5A78' stroke-width='1.6' fill='none' stroke-linecap='round'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  padding-right: 40px;
-}
-.field input:not([type="checkbox"]):not([type="radio"]):focus,
-.field select:focus,
-.field textarea:focus {
-  outline: none;
-  border-color: var(--c-primary);
-  background: var(--c-card);
-  box-shadow: 0 0 0 4px rgba(44, 90, 120, 0.12);
-}
-
-.ship-switch {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-@media (max-width: 480px) { .ship-switch { grid-template-columns: 1fr; } }
-
-.ship-switch__opt {
-  position: relative;
-  padding: 18px 18px 18px 46px;
-  border: 1px solid var(--c-border);
-  border-radius: var(--radius);
-  background: var(--c-bg);
-  cursor: pointer;
-  transition: all var(--t-fast) var(--ease);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.ship-switch__opt input {
-  position: absolute;
-  opacity: 0;
-  inset: 0;
-  width: 100%;
-  cursor: pointer;
-}
-.ship-switch__opt::before {
-  content: '';
-  position: absolute;
-  left: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  border: 1.5px solid var(--c-border-2);
-  background: var(--c-card);
-  transition: all var(--t-fast) var(--ease);
-}
-.ship-switch__opt.is-checked,
-.ship-switch__opt:has(input:checked) {
-  border-color: var(--c-primary);
-  background: var(--c-card);
-  box-shadow: 0 0 0 3px rgba(44, 90, 120, 0.1);
-}
-.ship-switch__opt.is-checked::before,
-.ship-switch__opt:has(input:checked)::before {
-  border-color: var(--c-primary);
-  background:
-    radial-gradient(circle, var(--c-primary) 0 5px, transparent 6px);
-}
-.ship-switch__title {
-  font-family: var(--f-display);
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--c-text);
-}
-.ship-switch__sub {
-  font-size: 12px;
-  color: var(--c-text-3);
-  letter-spacing: 0.04em;
-}
-
-.field--check { margin-top: 6px; }
-.check {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  font-size: 14px;
-  color: var(--c-text-2);
-  line-height: 1.55;
-  cursor: pointer;
-  user-select: none;
-}
-
-.check input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-  margin: 0;
-  border: 1.5px solid var(--c-border-2);
-  border-radius: 6px;
-  background: var(--c-card);
-  cursor: pointer;
-  position: relative;
-  transition: border-color var(--t-fast) var(--ease),
-              background var(--t-fast) var(--ease),
-              box-shadow var(--t-fast) var(--ease);
-}
-.check input[type="checkbox"]:hover {
-  border-color: var(--c-primary-2);
-}
-.check input[type="checkbox"]:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(44, 90, 120, 0.18);
-  border-color: var(--c-primary);
-}
-.check input[type="checkbox"]:checked {
-  background: var(--c-primary);
-  border-color: var(--c-primary);
-}
-.check input[type="checkbox"]:checked::after {
-  content: '';
-  position: absolute;
-  left: 6px;
-  top: 2px;
-  width: 6px;
-  height: 11px;
-  border: solid #FFFFFF;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-.check span {
-  flex: 1;
-  padding-top: 1px;
-}
-
-.booking__submit { display: flex; flex-direction: column; gap: 14px; align-items: stretch; }
-.booking__submit .btn { width: 100%; }
-.booking__hint {
-  font-size: 12px;
-  color: var(--c-text-3);
-  text-align: center;
-  line-height: 1.5;
+.booking__contact a:hover {
+  color: var(--c-primary-2);
 }
 
 /* =================================================================
@@ -1516,6 +1960,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   line-height: 1.7;
   font-size: 15px;
   margin: 0;
+}
+.faq__item-content a {
+  color: var(--c-primary);
+  font-weight: 600;
+  text-underline-offset: 3px;
 }
 
 .faq__item-content {
@@ -1609,101 +2058,78 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 /* =================================================================
-   MODAL
+   SCROLL TO TOP
    ================================================================= */
-.modal {
+.scroll-top {
   position: fixed;
-  inset: 0;
+  right: max(18px, env(safe-area-inset-right, 0px));
+  bottom: max(20px, env(safe-area-inset-bottom, 0px));
   z-index: 200;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-}
-.modal[hidden] { display: none; }
-.modal__backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(20, 35, 50, 0.45);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  animation: fadeBg 240ms var(--ease) both;
-}
-@keyframes fadeBg { from { opacity: 0; } to { opacity: 1; } }
-
-.modal__card {
-  position: relative;
-  background: var(--c-card);
-  border-radius: var(--radius-lg);
-  padding: 40px 36px 32px;
-  max-width: 500px;
-  width: 100%;
-  text-align: center;
-  box-shadow: var(--c-shadow-lg);
-  animation: popIn 360ms var(--ease) both;
-}
-@keyframes popIn {
-  from { opacity: 0; transform: translateY(20px) scale(0.96); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.modal__close {
-  position: absolute;
-  top: 14px; right: 14px;
-  width: 36px; height: 36px;
-  background: transparent;
-  border: 0;
-  font-size: 28px;
-  color: var(--c-text-3);
-  line-height: 1;
-  border-radius: 999px;
-  transition: all var(--t-fast) var(--ease);
-}
-.modal__close:hover { background: var(--c-bg-2); color: var(--c-text); }
-
-.modal__icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 22px;
-  background: var(--c-river);
-  color: var(--c-primary);
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 50%;
-  display: grid;
-  place-items: center;
+  background: var(--c-primary);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(44, 90, 120, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition:
+    opacity var(--t-fast) var(--ease),
+    visibility var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease),
+    background var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
 }
-.modal__icon svg { width: 30px; height: 30px; }
+.scroll-top__icon {
+  display: block;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+}
 
-.modal__card h3 {
-  font-size: 26px;
-  margin-bottom: 12px;
-}
-.modal__card > p {
-  color: var(--c-text-2);
-  margin-bottom: 22px;
+@media (min-width: 992px) {
+  .scroll-top {
+    width: 60px;
+    height: 60px;
+  }
+  .scroll-top__icon {
+    width: 30px;
+    height: 30px;
+  }
 }
 
-.modal__summary {
-  text-align: left;
-  background: var(--c-bg-2);
-  border-radius: var(--radius);
-  padding: 18px 22px;
-  margin-bottom: 22px;
-  font-size: 14px;
+.scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
-.modal__summary dl { margin: 0; display: grid; gap: 8px; }
-.modal__summary div { display: flex; justify-content: space-between; gap: 14px; }
-.modal__summary dt { color: var(--c-text-3); }
-.modal__summary dd { color: var(--c-text); font-weight: 500; margin: 0; text-align: right; }
+.scroll-top:hover {
+  background: var(--c-primary-2);
+  box-shadow: 0 12px 28px rgba(44, 90, 120, 0.34);
+}
+.scroll-top:active {
+  transform: translateY(1px);
+}
+.scroll-top.is-visible:active {
+  transform: translateY(1px);
+}
 
-.modal__actions {
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-}
-.modal__note {
-  margin-top: 18px;
-  font-size: 11px;
-  color: var(--c-text-3);
-  font-style: italic;
+@media (prefers-reduced-motion: reduce) {
+  .scroll-top {
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+    transform: none;
+  }
+  .scroll-top.is-visible:active {
+    transform: none;
+  }
 }
 
 /* =================================================================
